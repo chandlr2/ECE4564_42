@@ -36,10 +36,7 @@ class listener(StreamListener):
             s.close()
             print('Received:', data_)
 			print(tweet)
-
-
         return(True)
-
     def on_error(self, status):
         print(status)
 
