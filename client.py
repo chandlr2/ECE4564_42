@@ -33,7 +33,7 @@ if '-p' in myargs:
 	server_port = int(myargs['-p'])
 	myargs.pop('-p', None)
 if '-t' in myargs:
-	hashtag = int(myargs['-t'])
+	hashtag = myargs['-t']
 	myargs.pop('-b', None)
 if '-z' in myargs:
 	socket_size = myargs['-z']
