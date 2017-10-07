@@ -34,13 +34,13 @@ if '-p' in myargs:
 	myargs.pop('-p', None)
 if '-t' in myargs:
 	hashtag = myargs['-t']
-	myargs.pop('-b', None)
+	myargs.pop('-t', None)
 if '-z' in myargs:
 	socket_size = myargs['-z']
 	myargs.pop('-z', None)
 if '-s' in myargs:
 	host = myargs['-s']
-	myargs.pop('-z', None)
+	myargs.pop('-s', None)
 if len(myargs.keys()) != 0:
 	print('Invalid arguments')
 	sys.exit()
