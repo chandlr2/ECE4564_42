@@ -25,20 +25,20 @@ from tweepy.streaming import StreamListener
 
 class listener(StreamListener):
 
-    def on_data(self, data):
-        hashtag = "#ECE4564T31"
-        tweet = data.split(',"text":"')[1].split('","source')[0]
-        if hashtag in tweet:
-            tweet = tweet.replace(hashtag,"")
-            s.connect((host, port))
-            s.send(tweet.encode())
-            data_ = s.recv(size)
-            s.close()
-            print('Received:', data_)
+	def on_data(self, data):
+		hashtag = "#ECE4564T31"
+		tweet = data.split(',"text":"')[1].split('","source')[0]
+		if hashtag in tweet:
+			tweet = tweet.replace(hashtag,"")
+			s.connect((host, port))
+			s.send(tweet.encode())
+			data_ = s.recv(size)
+			s.close()
+			print('Received:', data_)
 			print(tweet)
-        return(True)
-    def on_error(self, status):
-        print(status)
+		return(True)
+	def on_error(self, status):
+		print(status)
 
 auth = OAuthHandler(ckey, csecret)
 auth.set_access_token(atoken, asecret)
