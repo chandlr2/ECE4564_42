@@ -31,7 +31,8 @@ class listener(StreamListener):
         if hashtag in tweet:
             tweet = tweet.replace(hashtag,"")
             s.connect((host, port))
-            s.send(tweet)
+            #s.send(tweet)
+			s.send(b'What is the meaning of life')
             data_ = s.recv(size)
             s.close()
             print('Received:', data_)
