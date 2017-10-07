@@ -9,7 +9,7 @@ from test import listener
 
 host = sys.argv[1]
 #print(host)
-port = 50000
+port = 5803
 size = 1024
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
