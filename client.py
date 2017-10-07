@@ -39,7 +39,7 @@ if '-z' in myargs:
 	socket_size = myargs['-z']
 	myargs.pop('-z', None)
 if '-s' in myargs:
-	host = myargs['-z']
+	host = myargs['-s']
 	myargs.pop('-z', None)
 if len(myargs.keys()) != 0:
 	print('Invalid arguments')
