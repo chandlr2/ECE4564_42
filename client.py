@@ -4,7 +4,6 @@ from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
 import socket
 import sys
-from test import listener
 
 
 host = sys.argv[1]
