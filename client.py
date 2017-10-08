@@ -58,16 +58,13 @@ class listener(StreamListener):
 		cmd_beg = 'espeak -ven+f3 -k5 -s150 '
 		with open(os.devnull, 'w') as devnull:
 			subprocess.run(cmd_beg + parsed, stdout=devnull, stderr=devnull, shell=True)
-		if hashtag in tweet:
-			s.connect((host, server_port))
-			print('Conncting to server ',host,' on port',server_port)
-			s.send(tweet.encode())
-			print('Sending question: ',tweet)
-			data_ = s.recv(socket_size)
-			s.close()
-			print('Received answer:', data_)
-			#print(tweet)
-		return(True)
+		s.connect((host, server_port))
+		print('Conncting to server ',host,' on port',server_port)
+		s.send(tweet.encode())
+		print('Sending question: ',tweet)
+		data_ = s.recv(socket_size)
+		s.close()
+		print('Received answer:', data_)
 	def on_error(self, status):
 		print(status)
 
