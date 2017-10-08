@@ -52,13 +52,13 @@ class listener(StreamListener):
 	def on_data(self, data):
 		user = data.split('"screen_name":"')[1].split('","')[0]
 		tweet = data.split(',"text":"')[1].split('","source')[0]
+		tweet = tweet.replace(hashtag,"")
 		print('New Tweet: ',tweet,' | User: ',user)
 		parsed = tweet.replace(" ", "_")
 		cmd_beg = 'espeak -ven+f3 -k5 -s150 '
 		with open(os.devnull, 'w') as devnull:
 			subprocess.run(cmd_beg + parsed, stdout=devnull, stderr=devnull, shell=True)
 		if hashtag in tweet:
-			tweet = tweet.replace(hashtag,"")
 			s.connect((host, server_port))
 			print('Conncting to server ',host,' on port',server_port)
 			s.send(tweet.encode())
