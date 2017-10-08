@@ -13,7 +13,7 @@ from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
 import socket
 import sys
-from keys import ckey,csecret,asecret,atoken
+from clientKeys import ckey,csecret,asecret,atoken
 from tweepy import Stream
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
