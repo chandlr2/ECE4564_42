@@ -54,9 +54,9 @@ class listener(StreamListener):
 		tweet = data.split(',"text":"')[1].split('","source')[0]
 		print('New Tweet: ',tweet,' | User: ',user)
 		parsed = tweet.replace(" ", "_")
-		#cmd_beg = 'espeak -ven+f3 -k5 -s150 '
-		#with open(os.devnull, 'w') as devnull:
-		#	subprocess.run(cmd_beg + parsed, stdout=devnull, stderr=devnull, shell=True)
+		cmd_beg = 'espeak -ven+f3 -k5 -s150 '
+		with open(os.devnull, 'w') as devnull:
+			subprocess.run(cmd_beg + parsed, stdout=devnull, stderr=devnull, shell=True)
 		if hashtag in tweet:
 			tweet = tweet.replace(hashtag,"")
 			s.connect((host, server_port))
@@ -65,7 +65,7 @@ class listener(StreamListener):
 			print('Sending question: ',tweet)
 			data_ = s.recv(socket_size)
 			s.close()
-			print('Received:', data_)
+			print('Received answer:', data_)
 			#print(tweet)
 		return(True)
 	def on_error(self, status):
