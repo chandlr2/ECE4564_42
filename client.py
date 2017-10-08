@@ -71,8 +71,8 @@ class listener(StreamListener):
 		print('Sending question: ',tweet)
 		data_ = s.recv(socket_size)
 		s.close()
-		data_ = data_.replace("b'","")
-		data_ = data_.replace("'","")
+		data_ = str(data_)
+		data_ = data_[2:-1]
 		print('Received answer:', data_)
 	def on_error(self, status):
 		print(status)
