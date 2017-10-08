@@ -7,13 +7,12 @@
 
 import subprocess
 import os
-from keys import ckey,csecret,asecret,atoken #These variables are defined in a seperate file called keys.py (these are the twitter keys)
+from clientKeys import ckey,csecret,asecret,atoken #These variables are defined in a seperate file called keys.py (these are the twitter keys)
 from tweepy import Stream
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
 import socket
 import sys
-from clientKeys import ckey,csecret,asecret,atoken
 from tweepy import Stream
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
